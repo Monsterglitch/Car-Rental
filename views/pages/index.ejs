@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAR RENTAL WEBSITE</title>
+    <%- include('../partials/icon');%>
+    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo"><img src="logo.jpg" alt=""></a>
+
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <div class="navbar">
+
+            <a href="#home">Home</a>
+            <a href="#ride">Ride</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#reviews">Reviews</a>
+          
+        </div>
+        <div class="header-btn">
+            <a href="/login" class="sign-in">Sign In</a>
+        </div>
+    </header>
+    <section class="home" id="home">
+        <div class="text">
+            <h1>Looking to<br>rent a car</h1>
+            <p><span> Secure Your Car Rental at The Best Price Now<br>With Flexible Bookings & No Hidden Fees</span></p>
+            <div class="app-stores">
+                <img src="google.jpeg" alt="">
+                <img src="iphone.jpeg" alt="">
+            </div>
+        </div>
+        
+        <!-- <div class="form-container">
+            <form action="post" action="/index">
+                <div id = "location" class="input-box">
+                    <span>Location</span>
+                    <input type="search" name="" id="" placeholder="Add Location">
+                </div>
+                <div id="Pick-Up" class="input-box">
+                    <span>Pick-Up Date</span>
+                    <input type="date" name="" id="">
+                </div>
+                <div id="Return" class="input-box">
+                    <span>Return Date</span>
+                    <input type="date" name="" id="">
+                </div>
+                <button class="btn" >Submit</button>
+            </form>
+        </div> -->
+
+    </section>
+    <section class="ride" id="ride">
+        <div class="heading">
+            <span>How it works</span>
+            <h1>Rent with three easy steps</h1>
+        </div>
+        <div class="ride-container">
+            <div class="box">
+                <i class='bx bxs-map'></i>
+                <h2>Choose a location</h2>
+                <p>MPKNM Car Rentals<br>Chennai,TamilNadu</p>
+            </div>
+            <div class="box">
+                <i class='bx bxs-calendar-check'></i>
+                <h2>Pick-Up Date</h2>
+                <p>Choose a date, have a ride.<br>Your satisfaction is our happiness!!</p>
+            </div>
+            <div class="box">
+                <i class='bx bx-calendar-star'></i>
+                <h2>Book a car</h2>
+                <p>Book car rental at affordable prices in 20+ Indian cities. Rent a car for a day, week or month with
+                    Revv, best car rental service provider company in India.</p>
+            </div>
+        </div>
+    </section>
+    <section class="services" id="services">
+        <div class="heading">
+            <span>Best Services</span>
+            <h1>Explore Out Top Deals <br> From Top Rated Dealers</h1>
+        </div>
+        <div class="services-container">
+            <div class="box">
+                <div class="box-img">
+                    <img src="./Images/TataSafariStorme.jpg" alt="">
+                </div>
+                <p>2012</p>
+                <h3>Tata Safari Strome</h3>
+                <h2>1000<span>/day</span></h2>
+                <a href="#rentnow" class="renting"><button class="btn" data-modal="modal">Rent now</button></a>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="./Images/HondaCity.jpg" alt="">
+                </div>
+                <p>2010</p>
+                <h3>Honda City</h3>
+                <h2>1000<span>/day</span></h2>
+                <!-- <a href="#" class="btn" >Rent now</a> -->
+                <a href="#rentnow" class="renting"><button class="btn" data-modal="modal">Rent now</button></a>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="./Images/SuzukiErtiga.jpg" alt="">
+                </div>
+                <p>2015</p>
+                <h3>Suzuki Ertiga</h3>
+                <h2>1000 <span>/day</span></h2>
+                <a href="#rentnow" class="renting"><button class="btn" data-modal="modal">Rent now</button></a>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="./Images/SwiftDzire.jpg" alt="">
+                </div>
+                <p>2021</p>
+                <h3>Suzuki Swift Dzire</h3>
+                <h2>1000<span>/day</span></h2>
+                <a href="#rentnow" class="renting"><button class="btn" data-modal="modal">Rent now</button></a>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="./Images/HyundaiCreta.jpg" alt="">
+                </div>
+                <p>2020</p>
+                <h3>Hyundai Creta</h3>
+                <h2>1000<span>/day</span></h2>
+                <a href="#rentnow" class="renting"><button class="btn" data-modal="modal">Rent now</button></a>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="./Images/HondaCivic.jpg" alt="">
+                </div>
+                <p>2017</p>
+                <h3>Honda Civic</h3>
+                <h2>1000 <span>/day</span></h2>
+                <a href="#rentnow" class="renting"><button class="btn" data-modal="modal">Rent now</button></a>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="./Images/MahindraXUV.jpg" alt="">
+                </div>
+                <p>2012</p>
+                <h3>Mahindra XUV500</h3>
+                <h2>1000<span>/day</span></h2>
+                <a href="#rentnow" class="renting"><button class="btn" data-modal="modal">Rent now</button></a>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="./Images/MahendraBolero.jpeg" alt="">
+                </div>
+                <p>2012</p>
+                <h3>Mahindra Bolero</h3>
+                <h2>1000<span>/day</span></h2>
+                <a href="#rentnow" class="renting"><button class="btn" data-modal="modal">Rent now</button></a>
+               
+                
+            </div>
+            <div class="overlay" id="rentnow">
+                <div class="wrapper">
+                    <div class="content">
+                        <div class="container">
+                            <form method="POST" action="/">
+                                <div id="username" class="input-box">
+                                    <span>Username</span>
+                                    <input type="text" name="username" id="" placeholder="For User... ">
+                                </div>
+                                <div id = "location" class="input-box" style="margin: 0px;">
+                                    <span>Location</span>
+                                    <input type="search" name="location" id="" placeholder=" Add Location">
+                                </div>
+                                <div id="Pick-Up" class="input-box">
+                                    <span>Pick-Up Date</span>
+                                    <input type="date" name="pickup" id="">
+                                </div>
+                                <div id="Return" class="input-box">
+                                    <span>Return Date</span>
+                                    <input style="cursor:pointer;" type="date" name="return" id="">
+                                </div>
+                                <div class="buttonholder">
+                                    <button class="btn" >Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <div id="modal" class="modal">
+        <div class="modal-content">
+          <div class="contact-form">
+            <a class="close">&times;</a>
+            <form action="/">
+              <h2>Contact Us</h2>
+              <div>
+                <input class="fname" type="text" name="name" placeholder="Full name" />
+                <input type="text" name="name" placeholder="Email" />
+                <input type="text" name="name" placeholder="Phone number" />
+                <input type="text" name="name" placeholder="Website" />
+              </div>
+              <span>Message</span>
+              <div>
+                <textarea rows="4"></textarea>
+              </div>
+              <button type="submit" href="/">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div> -->
+
+    <section class="about" id="about">
+        <div class="heading">
+            <a href="./about.html"></a>
+            <span>About Us</span>
+            <h1>Best Customer Experience</h1>
+        </div>
+        <div class="about-container">
+            <div class="about-img">
+                <img src="./Images/CarRental.jpg" alt="">
+            </div>
+            <div class="about-text">
+                <span>About Us</span>
+                <p>With Flexible Bookings & No Hidden Fees, Secure Your Car Rental at The Best Price Now. We Speak Your
+                    Language. Unbeatable Prices. No Credit Card Fees. Types: Economy, Mini, Compact, People carrier,
+                    Intermediate, Premium, 4x4, Estate, SUV, Convertible.</p>
+                <!-- <button href="#" class="btn">Learn More</button> -->
+                <button class="btn" href="#">Learn More</button>
+            </div>
+        </div>
+    </section>
+    <section class="reviews" id="reviews">
+        <div class="heading">
+            <span>Reviews</span>
+            <h1>What our Customers say</h1>
+        </div>
+        <div class="reviews-container">
+            <div class="box">
+                <div class="rev-img">
+                    <img src="./Images/Alfred.jpg" alt="">
+                </div>
+                <h2>Alfred</h2>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <p>The cabs are always clean. They are spacious enough for our household, which is a family of 6.. I
+                    recommend them to everyone who plan car rent Trips in their future! </p>
+            </div>
+            <div class="box">
+                <div class="rev-img">
+                    <img src="./Images/Kiran.jpeg" alt="">
+                </div>
+                <h2>Kiran</h2>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <p>I had booked a car from Mumbai to Lonavala trip from Reliable Car the price is really affordable and
+                    good had really nice and friendly service. The driver was very helpful and polite, the car was clean
+                    and worked fine.</p>
+            </div>
+            <div class="box">
+                <div class="rev-img">
+                    <img src="./Images/Anusha.jpg" alt="">
+                </div>
+                <h2>Anusha</h2>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <p></p>Great price, service and very convenient.the car was clean and worked fine.
+                It was great car rental experience.
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-left">
+
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis accusamus, vel, odio quaerat fugit et
+                eligendi nam tempora eius pariatur qui harum. Veniam, nobis maxime sequi at nulla voluptas molestias!
+            </p>
+            <div class="socials">
+                <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+                <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+
+            </div>
+
+        </div>
+        <div class="footer-right">
+
+            <h2>Links</h2>
+            <u1 class="box">
+                <li><a href="#">Rent</a></li>
+                <li><a href="#">Ride</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Feedback</a></li>
+            </u1>
+
+
+
+            <div class="footer-right">
+                <h2>Address</h2>
+                <u1 class="box">
+                    <li><a href="#">43,Karapakkam</a></li>
+                    <li><a href="#">OMR</a></li>
+                    <li><a href="#">Chennai-600096</a></li>
+                    <li><a href="#">TamilNadu</a></li>
+                </u1>
+            </div>
+    </footer>
+
+    <script>
+        // alert("Logged In Succesfully");
+        let modalBtns = [...document.querySelectorAll(".btn")];
+        modalBtns.forEach(function (btn) {
+          btn.onclick = function () {
+            let modal = btn.getAttribute("data-modal");
+            document.getElementById(modal).style.display = "block";
+          };
+        });
+        let closeBtns = [...document.querySelectorAll(".close")];
+        closeBtns.forEach(function (btn) {
+          btn.onclick = function () {
+            let modal = btn.closest(".modal");
+            modal.style.display = "none";
+          };
+        });
+        window.onclick = function (event) {
+          if (event.target.className === "modal") {
+            event.target.style.display = "none";
+          }
+        };
+    </script>
+
+    <!-- <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+    </script> -->
+    <script src="/operationHandling/bookingroute.js"></script>
+</body>
+
+</html>

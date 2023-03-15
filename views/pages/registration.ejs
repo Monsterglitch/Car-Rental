@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register Yourself</title>
+    <%- include('../partials/icon');%>
+    <link rel="stylesheet" href="regiform.css">
+</head>
+
+<body class="page">
+    <div class="tyu">
+        <div class="regform">
+            <h1>Registration Form</h1>
+        </div>
+        <div class="main">
+            <form action="/registration" method="POST">
+
+                <h2 for="username" class="name">Name</h2>
+                <input class="firstname" type="text" placeholder="Username" name="username" required>
+
+
+                <h2 for="password"class="name">Password</h2>
+                <input class="password" type="password" placeholder="Password" name="password" required>
+
+                <h2 for="email" class="name">Email</h2>
+                <input class="email" type="text" placeholder="Enter your Email" name="email" required>
+
+                <h2 for="phone" class="name">Phone</h2>
+                <input class="number" type="text" placeholder="Phone number" name="phone" required>
+
+
+                <button  class="submit">
+                    <h3>Register</h3>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- onclick="func()" -->
+    <!-- <script>
+        function func() {
+            alert("Registered Succesfully");
+        }
+    </script> -->
+
+</body>
+
+</html>

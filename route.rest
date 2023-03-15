@@ -1,0 +1,54 @@
+
+GET http://localhost:3000/User
+
+###
+GET http://localhost:3000/User/63a693d52360d6f3e9ab4088
+
+###
+POST  http://localhost:3000/User
+Content-Type: application/json
+
+{
+    "username":"User1",
+    "password": "oiy7v4yu0ivuc",
+    "email": "User1@gmail.com",
+    "phone": "3658765297"
+}
+
+###
+DELETE http://localhost:3000/User/63a89dee212d9856d647246f
+
+###
+
+PATCH  http://localhost:3000/User/303
+
+###########################################################################
+
+###
+
+GET http://localhost:3000/Rent
+
+###
+
+POST http://localhost:3000/Rent
+Content-Type: application/json
+
+{
+    "location":"Koyembedu",
+    "pickup": "2023-01-04",
+    "return": "2023-01-11",
+    "pay":"7000"
+}
+
+###
+
+DELETE http://localhost:3000/Rent/63a69844c1b27a9b82215dc9
+
+###
+
+PATCH http://localhost:3000/Rent/63a69844c1b27a9b82215dc9
+Content-Type: application/json
+
+{
+    "name":"User1"
+}

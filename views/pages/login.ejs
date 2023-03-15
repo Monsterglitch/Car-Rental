@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./login.css">
+    <link href ="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <title>Login page</title>
+    <%- include('../partials/icon');%>
+</head>
+<body>
+    <form  method="POST" action="/login">
+        <!-- Main container for all inputs -->
+        <div class="mainContainer">
+            <!-- Username -->
+            <label for="username">Your username</label>
+            <input class="input-text" type="text" placeholder="Enter Username" name="username" required>
+            <br><br>
+            <!-- Password -->
+            <label for="password">Your password</label>
+            <input class="password" type="password" placeholder="Enter Password" name="password" required>
+            <!-- sub container for the checkbox and forgot password link -->
+            <!-- <div class="subcontainer">
+                <label>
+                  <input type="checkbox"  name="remember"> Remember me
+                </label>   
+                <p class="forgotpsd"> <a href="#">Forgot Password?</a></p>
+            </div> -->
+            <br><br><br>
+            <!-- Submit button -->
+            <button  id="CheckAlert" type="submit">Login</button>
+            <!-- Sign up link -->
+            <div class="signup">
+                <p>Not a member?</p>
+                <p class="register"><a href="/registration">Register here!</a></p>
+            </div>
+        </div>
+    </form>
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script> -->
+    <!-- <script src="../JS/login.js"></script> -->
+    <!-- <script>
+        function func() {
+            alert("Logged In Succesfully");
+        }
+    </script> -->
+</body>
+</html>

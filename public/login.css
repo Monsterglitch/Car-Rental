@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+body
+{
+  font-family:"Poppins",sans-serif; 
+  /*background-image: linear-gradient(to left top, #ff0000, #ff003f, #ff006b, #f30095, #d300ba, #af43da, #7b60f2, #0075ff, #009aff, #00baff, #00d5ff, #00edf9);
+  */
+  background: url("./Images/Volvo-XC40-white-scaled.jpg") no-repeat center fixed;     
+  background-size: cover;
+  color:whitesmoke;
+}
+
+html,body {
+  height:100%;
+  width:100%;
+  margin:0;
+}
+body , body {
+  display:flex;
+}
+form {
+  margin:auto;
+}
+
+h1{
+  text-align: center;
+}
+
+.signup{
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.forgotpsd:hover, .register:hover{
+  text-decoration: underline;
+}
+
+form{
+    width:35rem;
+    margin: auto;
+    color:whitesmoke;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(11, 15, 13, 0.582);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    padding: 20px 25px;
+}
+input[type=text], input[type=password]{
+  width: 100%;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 15px 18px;
+  box-sizing: border-box;
+}
+
+input[type=text]:hover, input[type=password]:hover{
+  /*
+  border: 1px solid;
+  padding: 10px;
+  padding: 15px 18px;
+  box-shadow: 5px 10px;
+  */
+  opacity: 0.9;
+}
+
+button {
+  background-color: #030804;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 5px;
+  margin: 7px 0;
+  width: 100%;
+  font-size: 18px;
+}
+
+button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+
+form{
+  width:35rem;
+  margin: auto;
+  color:whitesmoke;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(11, 15, 13, 0.582);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+/*
+.headingsContainer{
+    text-align: center;
+}
+*/
+.mainContainer{
+  padding: 25px;
+}
+.subcontainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subcontainer a{
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+span.forgotpsd a {
+  float: right;
+  color: whitesmoke;
+  padding-top: 16px;
+}
+
+.forgotpsd a{
+  color: rgb(74, 146, 235);
+}
+  
+.forgotpsd a:link{
+  text-decoration: none;
+}
+
+.register{
+  color: white;
+  text-align: center;
+}
+
+.register a{
+  color: rgb(74, 146, 235);
+}
+
+.register a:link{
+  text-decoration: none;
+}
+@media screen and (max-width: 600px) {
+  form{
+    width: 25rem;
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+  form{
+    width: 20rem;
+  }
+}
+  
