@@ -21,10 +21,10 @@ app.use(express.json());
 // app.use(favicon(__dirname + '/favicon.ico'));
 // app.use('/favicon.ico', express.static('Images/favicon.ico'));
 
-const UserRoutes = require('./Routes/UserRoute')
-app.use('/User', UserRoutes) // User Routes
-const RentRoutes = require('./Routes/RentRoute');
-app.use('/Rent', RentRoutes) // Renting Routes
+// const UserRoutes = require('./Routes/UserRoute')
+// app.use('/', UserRoutes)
+// const RentRoutes = require('./Routes/RentRoute');
+// app.use('/Rent', RentRoutes)
 
 
 // home page

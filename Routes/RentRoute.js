@@ -1,7 +1,8 @@
 const express = require('express');
-const router = express.Router();
+// const router = express.Router();
+const app = express();
 const Rents = require('../Models/RentModel')
-
+// const db = require("../Models");
 
 const getrents = async function (req,res,next) {
     let rent;
@@ -17,7 +18,7 @@ const getrents = async function (req,res,next) {
     next(); // starts executing the next lines of code
 } // function for getting rents by id
 
-router.get('/', async (req, res) => {
+app.get('/', async (req, res) => {
     try {
         const rents = await Rents.find({});
         res.status(200).json({rents});
@@ -27,7 +28,7 @@ router.get('/', async (req, res) => {
     // res.send('Hello from get');
 });
 
-router.post('/', async (req, res) => {
+app.post('/', async (req, res) => {
     const location = req.body.location;
     const pickupdate = req.body.pickup;
     const returndate = req.body.return;
@@ -53,7 +54,7 @@ router.post('/', async (req, res) => {
     }
 }); // post function -> creates documents in the database
 
-router.patch('/:id',  getrents, async (req, res) => {
+app.patch('/:id',  getrents, async (req, res) => {
     if(req.body.name != null) {
         res.rent.name = req.body.name;
     }
@@ -74,7 +75,7 @@ router.patch('/:id',  getrents, async (req, res) => {
     }
 });
 
-router.delete('/:id', getrents, async (req, res) => {
+app.delete('/:id', getrents, async (req, res) => {
     try {
         await res.rent.remove();
         res.json({message: 'Rent Deleted'})
@@ -83,4 +84,4 @@ router.delete('/:id', getrents, async (req, res) => {
     }
 });
 
-module.exports = router;
+module.exports = app;

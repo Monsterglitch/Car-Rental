@@ -1,6 +1,11 @@
 const express = require('express');
-const router = express.Router();
-const Users = require('../Models/UserModel')
+// const router = express.Router();
+const app = express();
+const db = require('../Models')
+// const User = require('../Models/UserModel')
+// const Rent = require('../Models/RentModel')
+// const db = require("../Models");
+
 
 const getusers = async function (req,res,next) {
     let user;
@@ -16,19 +21,10 @@ const getusers = async function (req,res,next) {
     next(); // starts executing the next lines of code
 } // function for getting users by id
 
-router.get('/:id', getusers, async (req, res) => {
-    res.json(res.user);
-}); // get function with id
+// app.get('/:id', getusers, async (req, res) => {
+//     res.json(res.user);
+// }); // get function with id
 
-router.get('/', async (req, res) => {
-    try {
-        const users = await Users.find({});
-        res.status(200).json({users});
-    } catch (error) {
-        res.status(500).json({message : error.message});
-    }
-    // res.send('Hello from get');
-}); // get function without id
 // const getAllTasks = async (request, response) => {
 //     try {
 //         const tasks = await Task.find({})
@@ -37,8 +33,83 @@ router.get('/', async (req, res) => {
 //         response.status(500).json({msg : error})
 //     }
 // }
+// app.get("/", function(req,res) {
+//     User.find({})
+//     .then(function(Users) {
+//       res.json(Users);
+//     })
+//     .catch(function(err) {
+//       res.json(err);
+//     })
+// });
 
-router.post('/', async (req, res) => {
+// app.post('/User', function(req, res) => {
+//     User.create(req.body)
+//     .then(function(err) {
+//         res.json(User);
+//     })
+//     .catch(function(err) {
+//         res.json(err);
+//     })
+// })
+app.post('/User', async (req, res) => {
+    try {
+        const users = await db.UserModel.create(req.body);
+        res.status(200).json({users});
+    } catch (error) {
+        res.status(500).json({message : error.message});
+    }
+    // res.send('Hello from get');
+});
+
+app.get('/Users', async (req, res) => {
+    try {
+        const users = await db.UserModel.find({});
+        res.status(200).json({users});
+    } catch (error) {
+        res.status(500).json({message : error.message});
+    }
+    // res.send('Hello from get');
+}); // get function without id
+
+app.get('/Rents', async (req, res) => {
+    try {
+        const rents = await db.RentModel.find({});
+        res.status(200).json({rents});
+    } catch (error) {
+        res.status(500).json({message : error.message});
+    }
+    // res.send('Hello from get');
+});
+
+app.post('/User/:id', async (req, res) => {
+    db.RentModel.create(req.body)
+    .then(function(Rent) {
+        return db.UserModel.findOneAndUpdate({_id: req.params.id}, {rentDetails: Rent._id}, {new: true});
+    })
+    .then(function(User) {
+        res.json(User);
+    })
+    .catch(function(err) {
+        res.json(err);
+    })
+})
+
+app.get('/Users/:id', async (req, res) => {
+    db.UserModel.findOne({_id: req.params.id})
+    .populate({path:'rentDetails'})
+    .then(function(User) {
+        res.json(User);
+    })
+    .catch(function(err) {
+        res.json(err)
+    })
+})
+
+
+
+
+app.post('/', async (req, res) => {
     const User = new Users({
         username: req.body.username,
         password: req.body.password,
@@ -55,7 +126,7 @@ router.post('/', async (req, res) => {
 
 
 
-router.delete('/:id', getusers, async (req, res) => {
+app.delete('/:id', getusers, async (req, res) => {
     try {
         await res.user.remove();
         res.json({message: 'User Deleted'})
@@ -68,4 +139,4 @@ router.delete('/:id', getusers, async (req, res) => {
 //     res.send(`Hello from patch ${req.params.id}`)
 // });
 
-module.exports = router;
+module.exports = app;

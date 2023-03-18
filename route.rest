@@ -2,17 +2,28 @@
 GET http://localhost:3000/User
 
 ###
-GET http://localhost:3000/User/63a693d52360d6f3e9ab4088
+POST http://localhost:3000/User/64132129bb0f147ba2b09136
+Content-Type: application/json
 
+{
+    "username":"Usere",
+    "location":"Mogappair East",
+    "pickup":"20/01/2020",
+    "return":"20/02/2020",
+    "pay":"2000"
+}
+
+###
+GET http://localhost:3000/Users/64132129bb0f147ba2b09136
 ###
 POST  http://localhost:3000/User
 Content-Type: application/json
 
 {
-    "username":"User1",
-    "password": "oiy7v4yu0ivuc",
-    "email": "User1@gmail.com",
-    "phone": "3658765297"
+    "username":"Usere",
+    "password": "i2rhg92",
+    "email": "Usere@gmail.com",
+    "phone": "7879954559"
 }
 
 ###

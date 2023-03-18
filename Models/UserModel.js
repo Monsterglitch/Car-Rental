@@ -17,6 +17,11 @@ const UserSchema = new mongoose.Schema({
     phone:{
         type: Number 
     },
+    rentDetails: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "RentModel"
+    },
 })
 
-module.exports = mongoose.model('UserData', UserSchema)
+const UserModel = mongoose.model('UserModel', UserSchema)
+module.exports = UserModel

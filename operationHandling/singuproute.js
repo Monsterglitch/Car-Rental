@@ -1,6 +1,6 @@
 // const express = require('express');
 // const router = express.Router();
-const User = require('../Models/UserModel');
+const db = require('../Models')
 
 const signuproute = async (req, res) => {
     try {
@@ -10,7 +10,7 @@ const signuproute = async (req, res) => {
         // if(returned.password === password) {
         //     res.status(201).render('pages/index');
         // }
-        const registerUser = new User({
+        const registerUser = new db.UserModel({
             username:req.body.username,
             password:req.body.password,
             email:req.body.email,

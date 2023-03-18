@@ -4,7 +4,8 @@
 // const returnDOM = document.getElementById('Return');
 // const returnMeridianDOM = document.getElementById('Return-Meridian');
 // const pickupMeridianDOM = document.getElementById('Pick-Up-Meridian');
-const Rent = require('../Models/RentModel');
+// const Rent = require('../Models/RentModel');
+const db = require('../Models')
 
 // formDOM.addEventListener('submit', async (e) => {
 //     e.preventDefault();
@@ -25,7 +26,7 @@ const bookingroute = async (req, res) => {
         // console.log(finalDay);
         // const returnedvalue = await User.findOne({username:username});
         // daybasis(no_of_days);
-        const RentCar = new Rent({
+        const RentCar = new db.RentModel({
             username:username,
             location:location,
             pickup:pickupdate,

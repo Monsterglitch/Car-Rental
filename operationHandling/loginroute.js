@@ -1,11 +1,11 @@
-const User = require('../Models/UserModel');
+const db = require('../Models')
 
 
 const loginroute = async (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
     try {
-        const returned = await User.findOne({username:username});
+        const returned = await db.UserModel.findOne({username:username});
         if(returned.password === password) {
             res.status(201).render('pages/index');
         }
