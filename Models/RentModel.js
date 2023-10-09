@@ -1,12 +1,6 @@
 const mongoose = require("mongoose");
 
-const RentSchema = new mongoose.Schema({
-    // name:{ 
-    //     type: String, 
-    //     required: [true, 'Must provide name'], 
-    //     trim: true,
-    //     maxlength: [20, "Length cannot be bigger"] 
-    // }, 
+const RentSchema = new mongoose.Schema({ 
     username: {
         type: String,
         required: true
@@ -25,11 +19,6 @@ const RentSchema = new mongoose.Schema({
     },
     pay:{
         type: Number
-        // required: true,
-        // validate : {
-        //     validator : Number.isInteger,
-        //     message   : '{VALUE} is not an integer value'
-        // }
     },
 });
 

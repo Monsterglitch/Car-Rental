@@ -13,6 +13,8 @@ app.set("view engine", "ejs"); // using template engine
 mongoose.set('strictQuery', true); // To avoid Deprecation WARNINGS
 app.use(express.static('./public'));
 app.use(express.json());
+
+
 // const path = require('path');
 // const favicon = require('serve-favicon');
 // app.use(favicon(path.join(__dirname, 'public', 'logo.ico')));
@@ -50,6 +52,7 @@ app.get('/registration', function(req, res) {
 app.post('/registration', async (req,res) => {
     signupRoute(req, res);
 }) // validating the form
+
 
 
 const port = 3000;

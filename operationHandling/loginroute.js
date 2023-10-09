@@ -11,8 +11,6 @@ const loginroute = async (req, res) => {
         }
     } catch (err) {
         res.status(404).render('pages/loginerrorpage');
-        // res.status(400).json({message:err.message});
-        // console.log({message:err.message});
     }
 };
 

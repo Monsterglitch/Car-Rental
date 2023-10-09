@@ -1,15 +1,4 @@
-// const formDOM = document.querySelector('.form-container');
-// const locationInputDOM = document.getElementById('location');
-// const pickupDOM = document.getElementById('Pick-Up');
-// const returnDOM = document.getElementById('Return');
-// const returnMeridianDOM = document.getElementById('Return-Meridian');
-// const pickupMeridianDOM = document.getElementById('Pick-Up-Meridian');
-// const Rent = require('../Models/RentModel');
 const db = require('../Models')
-
-// formDOM.addEventListener('submit', async (e) => {
-//     e.preventDefault();
-// });
 
 const bookingroute = async (req, res) => {
     const username = req.body.username;
@@ -19,13 +8,9 @@ const bookingroute = async (req, res) => {
     const [year1, month1, date1] = pickupdate.split('-');
     const [year2, month2, date2] = returndate.split('-');
     var finalDay = (date2 - date1) + 1;
-    // console.log(finalDay)
     finalDay = Math.abs(finalDay);
     const payable = finalDay*1000; 
     try {        
-        // console.log(finalDay);
-        // const returnedvalue = await User.findOne({username:username});
-        // daybasis(no_of_days);
         const RentCar = new db.RentModel({
             username:username,
             location:location,
@@ -38,15 +23,8 @@ const bookingroute = async (req, res) => {
 
     } catch (err) {
         res.status(404).render('pages/error');
-        // res.status(400).json({message:err.message});
-        // console.log({message:err.message});
     }
 };
-
-// var a= 5  //get the days that is start and end date (end date - start date)
-// var b=daybasis(a)
-// console.log(a)
-// console.log("Total amount is:"+b)
 
 
 module.exports = bookingroute;

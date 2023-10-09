@@ -2,7 +2,7 @@ const express = require('express');
 // const router = express.Router();
 const app = express();
 const db = require('../Models')
-// const User = require('../Models/UserModel')
+const User = require('../Models/UserModel')
 // const Rent = require('../Models/RentModel')
 // const db = require("../Models");
 
@@ -110,7 +110,7 @@ app.get('/Users/:id', async (req, res) => {
 
 
 app.post('/', async (req, res) => {
-    const User = new Users({
+    const User = new db.UserModel({
         username: req.body.username,
         password: req.body.password,
         email: req.body.email,
