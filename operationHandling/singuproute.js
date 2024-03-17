@@ -8,7 +8,7 @@ const signuproute = async (req, res) => {
             email:req.body.email,
             phone:req.body.phone
         })
-        const registered = await registerUser.save();
+        registerUser.save();
         res.status(201).render('pages/index');
 
     } catch (err) {

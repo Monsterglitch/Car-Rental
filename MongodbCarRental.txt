@@ -1,8 +1,8 @@
 ----------------------------------------------------------<Car-Rental>---------------------------------------------------------------------------
 
-Username -> admin
-Password -> FYu9BsGk8e13Ie44
+Username -> admin1
+Password -> lFmD1XST3g7HSvHu
 
-mongodb+srv://admin:FYu9BsGk8e13Ie44@firstcluster.jg6yye0.mongodb.net/Car-Rental-Project?retryWrites=true&w=majority
+mongodb+srv://admin1:lFmD1XST3g7HSvHu@firstcluster.jg6yye0.mongodb.net/Car-Rental?retryWrites=true&w=majority&appName=FirstCluster
 
 ------------------------------------------------------------------------------------------------------------------------------------------

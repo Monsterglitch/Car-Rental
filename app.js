@@ -1,3 +1,5 @@
+// const { MongoClient, ServerApiVersion } = require('mongodb');
+// const { getDb, connectToDb } = require('./db/connect')
 const express = require('express');
 const connectDB = require('./db/connect');
 const mongoose = require('mongoose');
@@ -37,14 +39,6 @@ app.post('/', function(req, res) {
     bookingRoute(req,res);
 }); // validating the form
 
-// login page
-app.get('/login', function(req, res) {
-    res.render('pages/login');
-}); // rendering the page
-app.post('/login', async (req,res) => {
-    LoginRoute(req,res);
-}) // validating the form
-
 // registration page
 app.get('/registration', function(req, res) {
     res.render('pages/registration');
@@ -54,14 +48,26 @@ app.post('/registration', async (req,res) => {
 }) // validating the form
 
 
+// Connect using MongoDB ODM
+// const client = new MongoClient(process.env.MONGO_URI, {
+//     serverApi: {
+//       version: ServerApiVersion.v1,
+//       strict: true,
+//       deprecationErrors: true,
+//     }
+// });
 
 const port = 3000;
 const start = async () => {
     try {
+        // await client.db("Car-Rental").command({ ping: 1 });
+        // console.log("Pinged your deployment. You successfully connected to MongoDB!");
         await connectDB(process.env.MONGO_URI);
-        app.listen(port, console.log(`Server is listening on port ${port}...`));
+        app.listen(port, console.log(`Server is listening on ${port}`));
     } catch (error) {
         console.log(error);
     }
 }
-start(); // server starts
+start().catch(console.dir); // server starts
+
+

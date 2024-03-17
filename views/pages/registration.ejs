@@ -1,40 +1,42 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Register Yourself</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./registration.css">
+    <link href ="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <title>registration page</title>
     <%- include('../partials/icon');%>
-    <link rel="stylesheet" href="regiform.css">
 </head>
-
-<body class="page">
-    <div class="tyu">
-        <div class="regform">
-            <h1>Registration Form</h1>
+<body>
+    <form  method="POST" onsubmit="handleSubmit()">
+        <!-- Main container for all inputs -->
+        <div class="mainContainer">
+            <!-- Username -->
+            <label for="username">Your Username</label>
+            <input class="input-text" type="text" placeholder="Enter Username" name="username" required>
+            <br>
+            <!-- Password -->
+            <label for="password">Your Password</label>
+            <input class="password" type="password" placeholder="Enter Password" name="password" required>
+            <br>
+            <label for="email">Your Email</label>
+            <input class="email" type="email" placeholder="Enter Email" name="email" required>
+            <br>
+            <label for="phone">Your Phone Number</label>
+            <input class="phone" type="phone" placeholder="Enter Phone" name="phone" required>
+            <br><br>
+            <!-- Submit button -->
+            <button  id="CheckAlert" type="submit">Register</button>
+            <!-- Sign up link -->
         </div>
-        <div class="main">
-            <form action="/registration" method="POST">
-
-                <h2 for="username" class="name">Name</h2>
-                <input class="firstname" type="text" placeholder="Username" name="username" required>
-
-
-                <h2 for="password"class="name">Password</h2>
-                <input class="password" type="password" placeholder="Password" name="password" required>
-
-                <h2 for="email" class="name">Email</h2>
-                <input class="email" type="text" placeholder="Enter your Email" name="email" required>
-
-                <h2 for="phone" class="name">Phone</h2>
-                <input class="number" type="text" placeholder="Phone number" name="phone" required>
-
-
-                <button  class="submit">
-                    <h3>Register</h3>
-                </button>
-            </form>
-        </div>
-    </div>
+    </form>
+    <script>
+        function handleSubmit() {
+            // e.preventDefault
+            alert("User Created Successfully")
+        }
+    </script>
 </body>
-
 </html>

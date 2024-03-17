@@ -16,13 +16,13 @@ const bookingroute = async (req, res) => {
             location:location,
             pickup:pickupdate,
             return:returndate,
-            pay: payable
+            pay:payable
         })
-        const rented = await RentCar.save();
+        RentCar.save();
         res.status(201).render('pages/index');
 
     } catch (err) {
-        res.status(404).render('pages/error');
+        console.log("Problem in booking Cars");
     }
 };
 

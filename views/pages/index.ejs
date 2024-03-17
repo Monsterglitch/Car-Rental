@@ -8,13 +8,14 @@
     <title>CAR RENTAL WEBSITE</title>
     <%- include('../partials/icon');%>
     <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="../../assets/vendor/aos/dist/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 </head>
 
 <body>
     <header>
-        <a href="#" class="logo"><img src="logo.jpg" alt=""></a>
+        <!-- <a href="#" class="logo"><img src="logo.jpg" alt=""></a> -->
 
         <div class="bx bx-menu" id="menu-icon"></div>
         <div class="navbar">
@@ -27,7 +28,7 @@
           
         </div>
         <div class="header-btn">
-            <a href="/login" class="sign-in">Sign In</a>
+            <a href="/registration" class="sign-in">Register as a new User</a>
         </div>
     </header>
     <section class="home" id="home">
@@ -70,7 +71,7 @@
             <h1>Explore Out Top Deals <br> From Top Rated Dealers</h1>
         </div>
         <div class="services-container">
-            <div class="box">
+            <div class="box" data-aos="fade-up">
                 <div class="box-img">
                     <img src="./Images/TataSafariStorme.jpg" alt="">
                 </div>
@@ -311,7 +312,17 @@
           }
         };
     </script>
+    <script>
+        $(document).on('ready', function () {
+          // initialization of aos
+          AOS.init({
+            duration: 650,
+            once: true
+          });
+        });
+      </script>
     <script src="/operationHandling/Handler/index.js"></script>
+    <script src="../../assets/vendor/aos/dist/aos.js"></script>
 </body>
 
 </html>
