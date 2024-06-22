@@ -8,6 +8,7 @@
     <title>CAR RENTAL WEBSITE</title>
     <%- include('../partials/icon');%>
     <link rel="stylesheet" href="./home.css">
+    <!-- <script defer src="popup.js"></script> -->
     <link rel="stylesheet" href="../../assets/vendor/aos/dist/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -142,41 +143,56 @@
                 <p>2012</p>
                 <h3>Mahindra Bolero</h3>
                 <h2>1000<span>/day</span></h2>
-                <a href="#rentnow" class="renting"><button class="btn" data-modal="modal">Rent now</button></a>
-               
-                
+                <!-- <button class="btn" data-modal-target="#modal">Rent now</button> -->
             </div>
-            <div class="overlay" id="rentnow">
-                <div class="wrapper">
-                    <div class="content">
-                        <div class="container">
-                            <form method="POST" action="/">
-                                <div id="username" class="input-box">
-                                    <span>Username</span>
-                                    <input type="text" name="username" id="" placeholder="For User... ">
-                                </div>
-                                <div id = "location" class="input-box" style="margin: 0px;">
-                                    <span>Location</span>
-                                    <input type="search" name="location" id="" placeholder=" Add Location">
-                                </div>
-                                <div id="Pick-Up" class="input-box">
-                                    <span>Pick-Up Date</span>
-                                    <input type="date" name="pickup" id="">
-                                </div>
-                                <div id="Return" class="input-box">
-                                    <span>Return Date</span>
-                                    <input style="cursor:pointer;" type="date" name="return" id="">
-                                </div>
-                                <div class="buttonholder">
-                                    <button class="btn" >Submit</button>
-                                </div>
-                            </form>
-                        </div>
+            <button data-modal-target="#modal">Open Modal</button>
+        </div>
+
+
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <div class="title">Example Modal</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quod alias ut illo doloremque eum ipsum obcaecati distinctio debitis reiciendis quae quia soluta totam doloribus quos nesciunt necessitatibus, consectetur quisquam accusamus ex, dolorum, dicta vel? Nostrum voluptatem totam, molestiae rem at ad autem dolor ex aperiam. Amet assumenda eos architecto, dolor placeat deserunt voluptatibus tenetur sint officiis perferendis atque! Voluptatem maxime eius eum dolorem dolor exercitationem quis iusto totam! Repudiandae nobis nesciunt sequi iure! Eligendi, eius libero. Ex, repellat sapiente!
+            </div>
+        </div>
+        <div id="overlay"></div>
+
+        <!-- <div class="overlay" id="rentnow">
+            <div class="wrapper">
+                <div class="content">
+                    <div class="container">
+                        <form method="POST" action="/">
+                            <div id="username" class="input-box">
+                                <span>Username</span>
+                                <input type="text" name="username" id="" placeholder="For User... ">
+                            </div>
+                            <div id = "location" class="input-box" style="margin: 0px;">
+                                <span>Location</span>
+                                <input type="search" name="location" id="" placeholder=" Add Location">
+                            </div>
+                            <div id="Pick-Up" class="input-box">
+                                <span>Pick-Up Date</span>
+                                <input type="date" name="pickup" id="">
+                            </div>
+                            <div id="Return" class="input-box">
+                                <span>Return Date</span>
+                                <input style="cursor:pointer;" type="date" name="return" id="">
+                            </div>
+                            <div class="buttonholder">
+                                <button class="btn" >Submit</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+
     </section>
+
+
     <section class="about" id="about">
         <div class="heading">
             <a href="./about.html"></a>
@@ -291,7 +307,7 @@
     </footer>
 
     
-    <script>
+    <!-- <script>
         // alert("Logged In Succesfully");
         let modalBtns = [...document.querySelectorAll(".btn")];
         modalBtns.forEach(function (btn) {
@@ -312,8 +328,8 @@
             event.target.style.display = "none";
           }
         };
-    </script>
-    <script>
+    </script> -->
+    <!-- <script>
         $(document).on('ready', function () {
           // initialization of aos
           AOS.init({
@@ -321,9 +337,10 @@
             once: true
           });
         });
-      </script>
-    <script src="/operationHandling/Handler/index.js"></script>
-    <script src="../../assets/vendor/aos/dist/aos.js"></script>
+      </script> -->
+    <script src = "popup.js"></script>
+    <script src = "/operationHandling/Handler/index.js"></script>
+    <script src = "../../assets/vendor/aos/dist/aos.js"></script>
 </body>
 
 </html>
