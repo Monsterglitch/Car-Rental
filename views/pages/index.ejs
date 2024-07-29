@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAR RENTAL WEBSITE</title>
+    <title>CAR RENTAL</title>
     <%- include('../partials/icon');%>
     <link rel="stylesheet" href="./home.css">
     <!-- <script defer src="popup.js"></script> -->
@@ -69,84 +69,20 @@
     <section class="services" id="services">
         <div class="heading">
             <span>Best Services</span>
-            <h1>Explore Out Top Deals <br> From Top Rated Dealers</h1>
+            <h1>Explore Out Top Deals</h1>
         </div>
         <div class="services-container">
-            <div class="box" data-aos="fade-up">
-                <div class="box-img">
-                    <img src="./Images/TataSafariStorme.jpg" alt="">
+            <% files.forEach(file => { %>
+                <div class="box">
+                    <div class="box-img">
+                        <img src="<%= file.url %>" alt="<%= file.name %>">
+                    </div>
+                    <p><%= file.year %></p>
+                    <h3><%= file.name %></h3>
+                    <h2><%= file.price %><span>/day</span></h2>
+                    <button class="btn" data-modal-target="#modal">Rent now</button>
                 </div>
-                <p>2012</p>
-                <h3>Tata Safari Strome</h3>
-                <h2>1000<span>/day</span></h2>
-                <a href="#rentnow" class="renting"><button class="btn" data-modal="modal">Rent now</button></a>
-            </div>
-            <div class="box">
-                <div class="box-img">
-                    <img src="./Images/HondaCity.jpg" alt="">
-                </div>
-                <p>2010</p>
-                <h3>Honda City</h3>
-                <h2>1000<span>/day</span></h2>
-                <!-- <a href="#" class="btn" >Rent now</a> -->
-                <a href="#rentnow" class="renting"><button class="btn" data-modal="modal">Rent now</button></a>
-            </div>
-            <div class="box">
-                <div class="box-img">
-                    <img src="./Images/SuzukiErtiga.jpg" alt="">
-                </div>
-                <p>2015</p>
-                <h3>Suzuki Ertiga</h3>
-                <h2>1000 <span>/day</span></h2>
-                <a href="#rentnow" class="renting"><button class="btn" data-modal="modal">Rent now</button></a>
-            </div>
-            <div class="box">
-                <div class="box-img">
-                    <img src="./Images/SwiftDzire.jpg" alt="">
-                </div>
-                <p>2021</p>
-                <h3>Suzuki Swift Dzire</h3>
-                <h2>1000<span>/day</span></h2>
-                <a href="#rentnow" class="renting"><button class="btn" data-modal="modal">Rent now</button></a>
-            </div>
-            <div class="box">
-                <div class="box-img">
-                    <img src="./Images/HyundaiCreta.jpg" alt="">
-                </div>
-                <p>2020</p>
-                <h3>Hyundai Creta</h3>
-                <h2>1000<span>/day</span></h2>
-                <a href="#rentnow" class="renting"><button class="btn" data-modal="modal">Rent now</button></a>
-            </div>
-            <div class="box">
-                <div class="box-img">
-                    <img src="./Images/HondaCivic.jpg" alt="">
-                </div>
-                <p>2017</p>
-                <h3>Honda Civic</h3>
-                <h2>1000 <span>/day</span></h2>
-                <a href="#rentnow" class="renting"><button class="btn" data-modal="modal">Rent now</button></a>
-            </div>
-            <div class="box">
-                <div class="box-img">
-                    <img src="./Images/MahindraXUV.jpg" alt="">
-                </div>
-                <p>2012</p>
-                <h3>Mahindra XUV500</h3>
-                <h2>1000<span>/day</span></h2>
-                <a href="#rentnow" class="renting"><button class="btn" data-modal="modal">Rent now</button></a>
-            </div>
-            <div class="box">
-                <div class="box-img">
-                    <img src="./Images/MahendraBolero.jpeg" alt="">
-                </div>
-                <p>2012</p>
-                <h3>Mahindra Bolero</h3>
-                <h2>1000<span>/day</span></h2>
-                <button class="btn" data-modal-target="#modal">Rent now</button>
-            </div>
-        </div>
-
+            <% }); %>
 
         <div class="modal" id="modal">
             <div class="modal-header">
@@ -176,37 +112,6 @@
             </form>
         </div>
         <div id="overlay"></div>
-
-        <!-- <div class="overlay" id="rentnow">
-            <div class="wrapper">
-                <div class="content">
-                    <div class="container">
-                        <form method="POST" action="/">
-                            <div id="username" class="input-box">
-                                <span>Username</span>
-                                <input type="text" name="username" id="" placeholder="For User... ">
-                            </div>
-                            <div id = "location" class="input-box" style="margin: 0px;">
-                                <span>Location</span>
-                                <input type="search" name="location" id="" placeholder=" Add Location">
-                            </div>
-                            <div id="Pick-Up" class="input-box">
-                                <span>Pick-Up Date</span>
-                                <input type="date" name="pickup" id="">
-                            </div>
-                            <div id="Return" class="input-box">
-                                <span>Return Date</span>
-                                <input style="cursor:pointer;" type="date" name="return" id="">
-                            </div>
-                            <div class="buttonholder">
-                                <button class="btn" >Submit</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
     </section>
 
 
@@ -289,8 +194,7 @@
         <div class="footer-left">
 
             <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis accusamus, vel, odio quaerat fugit et
-                eligendi nam tempora eius pariatur qui harum. Veniam, nobis maxime sequi at nulla voluptas molestias!
+                Our car rental website offers a seamless experience, providing a diverse fleet of well-maintained vehicles for every need. Enjoy competitive rates, flexible booking options, and exceptional customer service.
             </p>
             <div class="socials">
                 <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
@@ -323,38 +227,6 @@
             </div>
     </footer>
 
-    
-    <!-- <script>
-        // alert("Logged In Succesfully");
-        let modalBtns = [...document.querySelectorAll(".btn")];
-        modalBtns.forEach(function (btn) {
-          btn.onclick = function () {
-            let modal = btn.getAttribute("data-modal");
-            document.getElementById(modal).style.display = "block";
-          };
-        });
-        let closeBtns = [...document.querySelectorAll(".close")];
-        closeBtns.forEach(function (btn) {
-          btn.onclick = function () {
-            let modal = btn.closest(".modal");
-            modal.style.display = "none";
-          };
-        });
-        window.onclick = function (event) {
-          if (event.target.className === "modal") {
-            event.target.style.display = "none";
-          }
-        };
-    </script> -->
-    <!-- <script>
-        $(document).on('ready', function () {
-          // initialization of aos
-          AOS.init({
-            duration: 650,
-            once: true
-          });
-        });
-      </script> -->
     <script src = "popup.js"></script>
     <script src = "/operationHandling/Handler/index.js"></script>
     <script src = "../../assets/vendor/aos/dist/aos.js"></script>

@@ -15,26 +15,36 @@ app.set("view engine", "ejs"); // using template engine
 mongoose.set('strictQuery', true); // To avoid Deprecation WARNINGS
 app.use(express.static('./public'));
 app.use(express.json());
-
-
-// const path = require('path');
-// const favicon = require('serve-favicon');
-// app.use(favicon(path.join(__dirname, 'public', 'logo.ico')));
-
-// app.use('/favicon.ico', express.static('Images/favicon.ico'));
-// app.use(favicon(__dirname + '/favicon.ico'));
-// app.use('/favicon.ico', express.static('Images/favicon.ico'));
+const { storage } = require('./file-controller');
+const { ref, listAll, getDownloadURL } = require('firebase/storage');
 
 // const UserRoutes = require('./Routes/UserRoute')
 // app.use('/', UserRoutes)
 // const RentRoutes = require('./Routes/RentRoute');
 // app.use('/Rent', RentRoutes)
-
-
+    
 // home page
-app.get('/', function(req, res) {
-    res.render('pages/index');
+app.get('/', async (req, res) => {
+    try {
+        const storageRef = ref(storage, ''); // reference to the root of storage
+        const result = await listAll(storageRef);
+        const imageUrls = await Promise.all(result.items.map((itemRef) => getDownloadURL(itemRef)));
+    
+        const files = await Promise.all(result.items.map(async (itemRef) => {
+            const url = await getDownloadURL(itemRef);
+            const fullname = itemRef.name.substring(0, itemRef.name.lastIndexOf('.'));
+            const name = fullname.split(' ');
+            return { name: name[0], year: name[1], price: name[2], url };
+        }));
+
+        res.render('pages/index', { files });
+    } catch (error) {
+        console.error('Error retrieving images:', error);
+        res.status(500).send('Error retrieving images');
+    }
 }); // rendering the page
+
+
 app.post('/', function(req, res) {
     bookingRoute(req,res);
 }); // validating the form
@@ -62,7 +72,7 @@ const start = async () => {
     try {
         // await client.db("Car-Rental").command({ ping: 1 });
         // console.log("Pinged your deployment. You successfully connected to MongoDB!");
-        await connectDB(process.env.MONGO_URI);
+        // await connectDB(process.env.MONGO_URI);
         app.listen(port, console.log(`Server is listening on ${port}`));
     } catch (error) {
         console.log(error);
