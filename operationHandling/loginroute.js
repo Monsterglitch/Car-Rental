@@ -7,10 +7,10 @@ const loginroute = async (req, res) => {
     try {
         const returned = await db.UserModel.findOne({username:username});
         if(returned.password === password) {
-            res.status(201).render('pages/index');
+            res.status(201).redirect('/');
         }
     } catch (err) {
-        res.status(404).render('pages/loginerrorpage');
+        res.status(404).json({ "Error" : "Error in Signing in" });
     }
 };
 

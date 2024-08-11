@@ -1,5 +1,3 @@
-// const { MongoClient, ServerApiVersion } = require('mongodb');
-// const { getDb, connectToDb } = require('./db/connect')
 const express = require('express');
 const connectDB = require('./db/connect');
 const mongoose = require('mongoose');
@@ -57,22 +55,12 @@ app.post('/registration', async (req,res) => {
     signupRoute(req, res);
 }) // validating the form
 
-
-// Connect using MongoDB ODM
-// const client = new MongoClient(process.env.MONGO_URI, {
-//     serverApi: {
-//       version: ServerApiVersion.v1,
-//       strict: true,
-//       deprecationErrors: true,
-//     }
-// });
-
 const port = 3000;
 const start = async () => {
     try {
         // await client.db("Car-Rental").command({ ping: 1 });
-        // console.log("Pinged your deployment. You successfully connected to MongoDB!");
-        // await connectDB(process.env.MONGO_URI);
+        console.log("Pinged your deployment. You successfully connected to MongoDB!");
+        await connectDB(process.env.MONGO_URI);
         app.listen(port, console.log(`Server is listening on ${port}`));
     } catch (error) {
         console.log(error);

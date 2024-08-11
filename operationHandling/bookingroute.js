@@ -19,9 +19,10 @@ const bookingroute = async (req, res) => {
             pay:payable
         })
         RentCar.save();
-        res.status(201).render('pages/index');
+        res.status(201).redirect('/');
 
     } catch (err) {
+        res.status(404).json({ "Error" : "Error in Booking cars" });
         console.log("Problem in booking Cars");
     }
 };
